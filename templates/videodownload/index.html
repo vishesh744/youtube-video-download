@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>youtube video downnload</title>
+    <style>
+        body{background-color: rgba(245, 20, 20, 0.829)}
+        *{padding:0;
+    margin:0;
+;}
+
+    .conten{text-align: center;
+    padding: 5px;}
+
+    .inti{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(245, 20, 20, 0);
+        
+    }
+
+    .inti2{height: 300px;
+        width: 379px;
+        display: flex;
+        border-radius: 1cm;
+        background-color: red;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button{font-weight: bold;
+    color: white;
+    
+    height: 43px;
+    width: 85px;
+    margin: 12px;
+    font-size: medium;
+    background-color: green;
+    border-radius: 12px
+    }
+
+    
+
+    input{    padding-top: 13px;
+    border-radius: 10px;
+    width: 240px;
+}
+
+    
+
+
+
+    </style>
+</head>
+<body>
+    <div class="conten">
+
+        <h2>Download Your Video</h2>
+        <h4>Hi friends, you can download any youtube video from here.Just copy the video link from youtube and paste below.
+            click the search button and press download , select video resolution and click download button 
+            and wait your video will be download.It is absolutely free and easy to download video.
+        
+        </h4>
+    </div>
+    
+<form action="thumbnail/" method="POST">
+    {% csrf_token %}
+    <div class="inti">
+        <div class="inti2">
+            <input type="url" name="youtube-link">
+            <div class="ser_btn">
+
+                <button type="submit" name="download">Search</button>
+            </div>
+            
+        </div>
+
+    </div>
+
+
+
+</form>
+
+</body>
+</html>

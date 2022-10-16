@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download youtube video</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+
+        }
+        body{
+            background-color: coral;
+        }
+
+        main{
+            height: 540px;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: coral;
+
+        }
+
+        .div1{
+            background-color: chocolate;
+            width: 300px;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+           
+            align-items: center;
+        }
+        .bt{display: block;
+            
+            align-items: center;
+            padding: 4px;
+        height: 300px;
+    width: 200px;}
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+  
+
+        
+        button{
+            border: green 8px solid;
+            height: auto;
+            width: auto;
+            text-align: center;
+            font-size:x-large;
+            background-color: green;
+            border-radius: 6px;
+            padding: 4px;
+            cursor: pointer;
+            margin: 7px;
+            border: solid black;
+
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class="div1">
+
+            <div class="bt">
+                <form action="{% url 'lgp1' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" value="{{video_url}}" name="u1">
+
+                    <button type="submit"><strong>Download(240p)</strong></button>
+                </form>
+
+
+
+                <form action="{% url 'hd' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" value="{{video_url}}" name="u1">
+
+                    <button type="submit"><strong>Download(360p)</strong></button>
+                </form>
+
+                <form action="{% url 'fullhd' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" value="{{video_url}}" name="u1">
+
+                    <button type="submit"><strong>Download(720)</strong></button>
+                </form>
+
+                <form action="{% url 'a_udio' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" value="{{video_url}}" name="u1">
+
+                    <button type="submit"><strong>Download(Audio)</strong></button>
+                </form>
+
+
+                <!-- <button><a href="{% url 'lgp1' %}"><strong>Download(240p)</strong></a></button> -->
+                <!-- <button><a href="{% url 'hd' %}"><strong>Download(360p)</strong></a></button>
+                
+                <button><a href="{% url 'fullhd' %}"><strong>Download(720p)</strong></a></button>
+                <button><a href="{% url 'webm' %}"><strong>Download(1080p)</strong></a></button>
+                <button><a href="{% url 'a_udio' %}"><strong>Download(audio only)</strong></a></button> -->
+                 
+            </div>
+            
+            </div>
+        
+
+
+        </div>
+    </main>
+    
+</body>
+</html>

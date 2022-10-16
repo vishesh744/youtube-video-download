@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube video</title>
+    <style>
+        *{padding: 0;
+        margin: 0;}
+
+        .imagee{
+            height: auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .div1{ height: 500px;
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        background-color: aqua;
+    border: black 5px solid;
+border-radius: 5px;}
+        
+
+        .final{
+            height: 441px;
+    width: 92%;
+            border: yellow 5px solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: palevioletred;
+            border-radius: 5px;
+            
+        }
+
+        .final img{height: 90%;
+        width: 90%;
+    border: green 5px solid;
+border-radius: 5px;}
+
+        .bt1{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            height: auto;
+            width: auto;
+            margin-top: 12px;
+
+        }
+
+        button{
+            border: green 8px solid;
+            height: 53px;
+            width: 190px;
+            text-align: center;
+            font-size: x-large;
+            background-color: green;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="imagee">
+        <div class="div1">
+            <div class="final">
+                <img src="{{imagee}}">
+            </div>
+        </div>
+    </div>
+    <form action="{% url 'confirm' %}" method="POST">
+        {% csrf_token %}
+        
+        <input type="hidden" value="{{url_link}}" name="url_again">
+        <div class="bt1">
+            <button><a href="{% url 'confirm' %}"><strong>Download</strong></a></button>
+        </div>
+
+    </form>
+    
+    
+    
+</body>
+</html>
