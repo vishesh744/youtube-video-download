@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-e)u2@#kn&qij@+ujtrojam2_4m8h6b0bb#g8-6#$c87v6n60ix
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['youtube-video-downloadd.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'youtube-video-downloadd.herokuapp.com']
 
 
 # Application definition
